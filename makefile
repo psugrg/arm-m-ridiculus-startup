@@ -7,9 +7,6 @@ CC = arm-none-eabi-gcc
 # Archiver
 AR = arm-none-eabi-ar
 
-# Objcopy
-OBJCOPY = arm-none-eabi-objcopy
-
 # Objdump
 OBJDUMP = arm-none-eabi-objdump
 
@@ -28,9 +25,7 @@ all:
 	$(CC) -o $(TARGET).elf startup.c $(CFLAGS) $(LDFLAGS)
 # disassamble
 	$(OBJDUMP) -d $(TARGET).elf > $(TARGET).asm
-# Create intel hex file
-	$(OBJCOPY) -O ihex $(TARGET).elf $(TARGET).hex
 
 PHONY: clean
 clean:
-	rm -f *.elf *.asm *.hex *.map
+	rm -f *.elf *.asm *.map
