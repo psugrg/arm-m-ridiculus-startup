@@ -20,14 +20,12 @@ MCU = cortex-m3
 CFLAGS  = -std=c99 -mcpu=$(MCU) -mthumb -O0 -g3
 
 # Linker flags:
-LDFLAGS = -Tlinker_script.ld -Wl,-Map,$(TARGET).map -nostartfiles -nodefaultlibs -nostdlib -ffreestanding
+LDFLAGS = -Tlinker_script.ld -Wl,-Map,$(TARGET).map -nostartfiles -nostdlib
 
 PHONY: all
 all:
 # Compile
-	$(CC) -c -o startup.o startup.c $(CFLAGS)
-# Link
-	$(CC) -o $(TARGET).elf startup.o $(LDFLAGS)
+	$(CC) -o $(TARGET).elf startup.c $(CFLAGS) $(LDFLAGS)
 # disassamble
 	$(OBJDUMP) -d $(TARGET).elf > $(TARGET).asm
 # Create intel hex file
