@@ -1,3 +1,5 @@
+/* Arm Cortex M extreme startup linker script */
+
 MEMORY
 {
   FLASH (rx)  : ORIGIN = 0x00000000, LENGTH = 1k
@@ -12,7 +14,7 @@ SECTIONS
 {
   .text :
   {
-      KEEP(*(.vectors))     	/* Interrupt vectors */
+      KEEP(*(.vectors))     /* Interrupt vectors */
       *(.text*)
   } >FLASH
 }

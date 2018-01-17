@@ -1,3 +1,5 @@
+#Arm Cortex M extreme startup makefile
+
 # Target
 TARGET = armxtrs
 
@@ -23,7 +25,7 @@ PHONY: all
 all:
 # Compile
 	$(CC) -o $(TARGET).elf startup.c $(CFLAGS) $(LDFLAGS)
-# disassamble
+# Disassamble
 	$(OBJDUMP) -d $(TARGET).elf > $(TARGET).asm
 
 PHONY: clean

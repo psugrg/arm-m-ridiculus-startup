@@ -1,4 +1,4 @@
-// Description to come!
+// Arm Cortex M extreme startup implementation
 
 // ----------------------------------------------------------------------------
 
