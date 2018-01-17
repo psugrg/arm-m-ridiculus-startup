@@ -1,5 +1,5 @@
 # Target
-TARGET = extremeStartup
+TARGET = armxtrs
 
 # C compiler
 CC = arm-none-eabi-gcc
