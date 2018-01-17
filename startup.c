@@ -26,7 +26,7 @@ __attribute__ ((section(".vectors"),used))
 pHandler_t __isr_vectors[] =
   {
         (pHandler_t) &_estack,                    // The initial stack pointer
-        Reset_Handler,                                   // The reset handler
+        Reset_Handler,                            // The reset handler
         Default_Handler,                          // The NMI handler
         Default_Handler,                          // The hard fault handler
         Default_Handler,                          // The MPU fault handler
