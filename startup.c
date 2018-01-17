@@ -46,7 +46,7 @@ pHandler_t __isr_vectors[] =
 
 // ----------------------------------------------------------------------------
 
-// This function is required by the GCC tool-chain.
+// This function is usually expected by the tool-chain
 void _start(void)
 {
   while (1)
