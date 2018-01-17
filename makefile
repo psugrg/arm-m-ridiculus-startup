@@ -17,7 +17,7 @@ MCU = cortex-m3
 CFLAGS  = -std=c99 -mcpu=$(MCU) -mthumb -O0 -g3
 
 # Linker flags:
-LDFLAGS = -Tlinker_script.ld -Wl,-Map,$(TARGET).map -nostartfiles -nostdlib
+LDFLAGS = -TlinkerScript.ld -Wl,-Map,$(TARGET).map -nostartfiles -nostdlib
 
 PHONY: all
 all:
@@ -28,4 +28,4 @@ all:
 
 PHONY: clean
 clean:
-	rm -f *.elf *.asm *.map
+	rm -f *.elf *.asm *.map *.o
