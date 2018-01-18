@@ -4,7 +4,7 @@
 
 ### What is this repository for? ###
 
-The project intention is to demonstrate how to create an Ridiculously small startup code for the ARM Cortex-M processors that contains only the absolute minimum of code. The main requirement was to use C language and to make the build system to not to add any extra code (libraries, startup code etc.). 
+The project intention is to demonstrate how to create ridiculously small startup code for the ARM Cortex-M processors that contains only the absolute minimum of code. The main requirement was to use C language and to make the build system to not to add any extra code (libraries, startup code etc.). 
 
 ### What is this repository _not_ for? ###
 
