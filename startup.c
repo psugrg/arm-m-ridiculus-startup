@@ -2,7 +2,7 @@
 
 // ----------------------------------------------------------------------------
 
-// This function is required by the GCC tool-chain.
+// This function is usually expected by the tool-chain
 void _start(void);
 
 // Reset Handler function. This function is expected by the GDB debugger
