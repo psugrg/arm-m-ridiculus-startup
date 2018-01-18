@@ -1,7 +1,7 @@
 #Arm Cortex M extreme startup makefile
 
-# Target
-TARGET = armxtrs
+# Target (Ridiculously Small Sartup code (rss) for cortex-M line (m) of the ARM (arm) processors)
+TARGET = rssmarm
 
 # C compiler
 CC = arm-none-eabi-gcc
