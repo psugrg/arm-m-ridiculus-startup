@@ -1,6 +1,6 @@
 # README #
 
-### Ridiculously small sartup code for the ARM Cortex-M processors family
+### Ridiculously small startup code for the ARM Cortex-M processors family
 
 ### What is this repository for? ###
 
