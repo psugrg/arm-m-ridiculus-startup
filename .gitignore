@@ -12,3 +12,7 @@
 *.elf
 *.map
 *.asm
+
+# DDEN scripts #
+################
+*.sh
