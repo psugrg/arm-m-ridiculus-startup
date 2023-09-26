@@ -12,13 +12,30 @@ build system to not to add any extra code (libraries, startup code etc.).
 This project cannot be used for any standard development activities since it
 doesn't setup the complete environment whatsoever.
 
-## Usage
+## Development environment
 
-### Development environment
+> TODO!
 
-This project can be compiled by the [arm-m-dev](https://github.com/psugrg/arm-m-dev)
-development environment.
+## Examples
 
-### Compilation
+### NUCLEO-L476RG
 
-Use standard `make all` and `make clean` commands to compile and clean the code.
+STM32 Nucleo-64 development board with STM32L476RG MCU.
+
+> This MCU implements an ARM Cortex M4 core
+
+Build firmware:
+
+```sh
+make all MCU=cortex-m4
+```
+
+Flash firmware into the device:
+
+> The board is equipped with the _ST-LINK_ debugger/programmer
+
+```sh
+st-flash --format binary write $(TARGET).bin 0x08000000
+```
+
+Where the `0x08000000` is the address of the _flash_ memory the firmware should be loaded to. This address depends on the selected _boot mode_. Please refer to the _STM32Lxx_reference_manual.pdf_ for more details.
