@@ -54,7 +54,9 @@ st-flash --reset --format binary write rssmarm.bin 0x08000000
 openocd -f /usr/share/openocd/scripts/board/st_nucleo_l4.cfg -c "program rssmarm.bin verify reset exit 0x08000000"
 ```
 
-#### Debug using Visual Studio Code
+#### Debug
+
+##### Using Visual Studio Code
 
 > Make sure that the [Cortex-Debug](https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug) extension is installed
 
@@ -81,3 +83,23 @@ Add the following to your debug configuration
 ```
 
 > Select the new _STM32L476RG Debug_ configuration and start debug session by hitting _F5_
+
+##### Using GDB
+
+1. Start _openocd_ as a _gdbserver_
+
+    ```sh
+   openocd -f /usr/share/openocd/scripts/board/st_nucleo_l4.cfg -s /usr/share/openocd/scripts  
+    ```
+
+2. Start _gdb_
+
+    ```sh
+    gdb-multiarch rssmarm.elf
+    ```
+
+3. Attach to th _gdbserver_ from the _gdb_ console
+
+    ```gdb
+    target remote :3333 
+    ```
