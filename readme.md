@@ -14,15 +14,26 @@ doesn't setup the complete environment whatsoever.
 
 ## Development environment
 
+### Local usage
+
+Install following dependencies for a local use
+
+- gcc-arm-none-eabi
+- gdb-multiarch
+- openocd
+- stlink-tools (optionally)
+
+### Docker image
+
 > TODO!
 
 ## Examples
 
 ### NUCLEO-L476RG
 
-the [STM32 Nucleo-64 development board](https://www.st.com/en/evaluation-tools/nucleo-l476rg.html) with STM32L476RG MCU.
+the [STM32 Nucleo-64 development board](https://www.st.com/en/evaluation-tools/nucleo-l476rg.html) with STM32L476RG ARM Cortex M4 MCU.
 
-> This MCU implements an ARM Cortex M4 core
+> This development board is equipped with and on-board _ST-LINK_ debugger/programmer
 
 #### Build firmware
 
@@ -44,7 +55,7 @@ This means that the binary should either be linked to a different address (optio
 
 ##### Flashing procedure using _st-link_
 
-> The board is equipped with the _ST-LINK_ debugger/programmer
+> This method requires the _stlink-tools_ package to be installed
 
 ```sh
 st-flash --reset --format binary write rssmarm.bin 0x08000000
