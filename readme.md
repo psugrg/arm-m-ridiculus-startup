@@ -20,7 +20,7 @@ doesn't setup the complete environment whatsoever.
 
 ### NUCLEO-L476RG
 
-STM32 Nucleo-64 development board with STM32L476RG MCU.
+the [STM32 Nucleo-64 development board](https://www.st.com/en/evaluation-tools/nucleo-l476rg.html) with STM32L476RG MCU.
 
 > This MCU implements an ARM Cortex M4 core
 
@@ -32,13 +32,27 @@ make all MCU=cortex-m4
 
 #### Flash firmware into the device
 
+The firmware for ARM M MCU normally starts from the beginning of the flash - `0x00` in the address space. This is how the linker script provided in the example links the application and what it assumes.
+
+The STM32L476RG MCU however has a special feature where it's possible to configure the _boot mode_ to select what code is executed after a reset. This mode can redirect (alias) addresses from a different location (`0x08000000` in this case) to the beginning of the flash (check documentation for more details).
+
+This means that the binary should either be linked to a different address (option _one_), or linked to `0x00` but flashed to a different location (option _two_).
+
+> The project is using the _second_ approach since it's more generic therefore examples below are flashing firmware to a specific location - `0x08000000` - which will be linked to `0x00` automatically by the MCU since this is the default behavior.
+
+##### Flashing procedure using _st-link_
+
 > The board is equipped with the _ST-LINK_ debugger/programmer
 
 ```sh
 st-flash --reset --format binary write rssmarm.bin 0x08000000
 ```
 
-Where the `0x08000000` is the address of the _flash_ memory the firmware should be loaded to. This address depends on the selected _boot mode_. Please refer to the _STM32Lxx_reference_manual.pdf_ for more details.
+##### Flashing procedure using _openocd_
+
+```sh
+openocd -f /usr/share/openocd/scripts/board/st_nucleo_l4.cfg -c "program rssmarm.bin verify reset exit 0x08000000"
+```
 
 #### Debug using Visual Studio Code
 
