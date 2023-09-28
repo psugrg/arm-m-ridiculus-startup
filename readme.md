@@ -39,6 +39,8 @@ The STM32L476RG MCU however has a special feature where it's possible to configu
 This means that the binary should either be linked to a different address (option _one_), or linked to `0x00` but flashed to a different location (option _two_).
 
 > The project is using the _second_ approach since it's more generic therefore examples below are flashing firmware to a specific location - `0x08000000` - which will be linked to `0x00` automatically by the MCU since this is the default behavior.
+>
+> This is also the reason why flashing procedures are using _bin_ format instead of _elf_ - _elf_ file contains details about addresses therefore could not be flashed to a specific location.
 
 ##### Flashing procedure using _st-link_
 
