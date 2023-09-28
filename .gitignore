@@ -1,18 +1,13 @@
-# Eclipse IDE project files #
-############################
-.project
-.cproject
-.settings
-
 # Compiled source #
 ###################
 *.o
 *.a
 *.hex
+*.bin
 *.elf
 *.map
 *.asm
 
-# DDEN scripts #
-################
-*.sh
+# VS Code #
+###########
+.vscode

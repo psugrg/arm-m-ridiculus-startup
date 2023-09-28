@@ -12,8 +12,8 @@ AR = arm-none-eabi-ar
 # Objdump
 OBJDUMP = arm-none-eabi-objdump
 
-# Device name
-MCU = cortex-m3
+# Objcopy
+OBJCOPY = arm-none-eabi-objcopy
 
 # Compiler flags:
 CFLAGS  = -std=c99 -mcpu=$(MCU) -mthumb -O0 -g3
@@ -27,7 +27,11 @@ all:
 	$(CC) -o $(TARGET).elf startup.c $(CFLAGS) $(LDFLAGS)
 # Disassamble
 	$(OBJDUMP) -d $(TARGET).elf > $(TARGET).asm
+# Hex file
+	$(OBJCOPY) -O ihex $(TARGET).elf $(TARGET).hex
+# Binary file
+	$(OBJCOPY) -O binary $(TARGET).elf $(TARGET).bin
 
 PHONY: clean
 clean:
-	rm -f *.elf *.asm *.map *.o
+	rm -f *.elf *.asm *.map *.o *.hex *.bin
