@@ -100,7 +100,7 @@ Add the following to your debug configuration
     gdb-multiarch rssmarm.elf
     ```
 
-3. Attach to th _gdbserver_ from the _gdb_ console
+3. Attach to the _gdbserver_ from the _gdb_ console
 
     ```gdb
     target remote :3333 
