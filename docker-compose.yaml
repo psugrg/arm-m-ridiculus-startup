@@ -1,0 +1,11 @@
+services:
+  arm-m-ridiculus-startup:
+    image: arm-m-ridiculus-startup
+    build:
+      context: .
+      args:
+        BASE_IMAGE: 'gcc-arm-none-eabi-dev:0.1'
+    tty: true
+    working_dir: /home/${USER}/project
+    volumes:
+      - ./:/home/${USER}/project

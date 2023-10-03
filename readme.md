@@ -18,6 +18,7 @@ doesn't setup the complete environment whatsoever.
 
 Install following dependencies for a local use
 
+- make
 - gcc-arm-none-eabi
 - gdb-multiarch
 - openocd
@@ -25,7 +26,18 @@ Install following dependencies for a local use
 
 ### Docker image
 
-> TODO!
+> 💡 Docker base development environment is based on th [Basic Project Dev](https://github.com/psugrg/basic-project-dev) and uses [gcc-arm-none-eabi-dev](https://github.com/psugrg/gcc-arm-none-eabi-dev) as a _base image_.
+
+Execute the following command to build and start the container:
+
+```bash
+docker compose build \
+    --build-arg USER_NAME=${USER} \
+    --build-arg USER_ID=$(id -u ${USER}) \
+    --build-arg GROUP_NAME=${USER} \
+    --build-arg GROUP_ID=$(id -g ${USER}) \
+&& docker compose up -d
+```
 
 ## Examples
 
