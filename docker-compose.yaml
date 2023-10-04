@@ -1,10 +1,10 @@
 services:
-  arm-m-ridiculus-startup:
+  dev-env:
     image: arm-m-ridiculus-startup
     build:
       context: .
       args:
-        BASE_IMAGE: 'gcc-arm-none-eabi-dev:0.1'
+        BASE_IMAGE: 'psugrg/gcc-arm-none-eabi-dev:v0.1'
     tty: true
     working_dir: /home/${USER}/project
     volumes:
