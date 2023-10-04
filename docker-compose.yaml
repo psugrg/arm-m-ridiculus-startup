@@ -9,3 +9,8 @@ services:
     working_dir: /home/${USER}/project
     volumes:
       - ./:/home/${USER}/project
+      - /dev/bus/usb:/dev/bus/usb
+    group_add:
+      - dialout
+      - plugdev
+    privileged: true
