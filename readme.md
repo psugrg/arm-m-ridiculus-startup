@@ -26,7 +26,9 @@ Install following dependencies for a local use
 
 ### Docker image
 
-> 💡 Docker base development environment is based on th [Basic Project Dev](https://github.com/psugrg/basic-project-dev) and uses [gcc-arm-none-eabi-dev](https://github.com/psugrg/gcc-arm-none-eabi-dev) as a _base image_.
+> 💡 Docker development environment is based on the [Basic Project Dev](https://github.com/psugrg/basic-project-dev) concept and uses [gcc-arm-none-eabi-dev](https://github.com/psugrg/gcc-arm-none-eabi-dev) as a _base image_.
+>
+> 💡 It requires [docker-compose](https://docs.docker.com/compose/) to be installed
 
 Execute the following command to build and start the container:
 
